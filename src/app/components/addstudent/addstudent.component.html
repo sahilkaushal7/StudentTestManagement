@@ -1,0 +1,113 @@
+<div class="row">
+  <div class="col-md-6">
+      <a href="#" routerLink="/" class="btn btn-link"><i class="fa fa-arrow-circle-o-left">&nbsp;Back To Students List</i></a> 
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+<div class="card">
+    <div class="card-header">
+      Add student
+    </div>
+    <div class="card-block">
+      <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input 
+            type="text"
+            class="form-control"
+            [(ngModel)]="student.firstName"
+            name="firstName"
+            #studentFirstName="ngModel"
+            minlength="2"
+            required
+          >
+          <div *ngIf="studentFirstName.errors?.required && studentFirstName.touched" class="alert alert-danger">
+            First name is required
+          </div>
+          <div *ngIf="studentFirstName.errors?.minlength && studentFirstName.touched" class="alert alert-danger">
+            Must be at least 2 characters
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input 
+            type="text"
+            class="form-control"
+            [(ngModel)]="student.lastName"
+            name="lastName"
+            #studentLastName="ngModel"
+            minlength="2"
+            required
+          >
+          <div *ngIf="studentLastName.errors?.required && studentLastName.touched" class="alert alert-danger">
+            Last name is required
+          </div>
+          <div *ngIf="studentLastName.errors?.minlength && studentLastName.touched" class="alert alert-danger">
+            Must be at least 2 characters
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            type="email"
+            class="form-control"
+            [(ngModel)]="student.email"
+            name="email"
+            #studentEmail="ngModel"
+            minlength="5"
+            required
+          >
+          <div *ngIf="studentEmail.errors?.required && studentEmail.touched" class="alert alert-danger">
+            Email required
+          </div>
+          <div *ngIf="studentEmail.errors?.minlength && studentEmail.touched" class="alert alert-danger">
+              Email should be atleast 5 characters
+            </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input 
+            type="text"
+            class="form-control"
+            [(ngModel)]="student.phone"
+            name="phone"
+            #studentPhone="ngModel"
+            minlength="10"
+            required
+          >
+          <div *ngIf="studentPhone.errors?.minlength && studentPhone.touched" class="alert alert-danger">
+            Add a valid phone number
+          </div>
+          <div *ngIf="studentPhone.errors?.required && studentPhone.touched" class="alert alert-danger">
+              Add a valid phone number
+            </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="studentid">Student ID</label>
+          <input 
+            type="number"
+            class="form-control"
+            [(ngModel)]="student.studentid"
+            name="studentid"
+            #studentStudentId="ngModel"
+            minlength="3"
+            required
+          >   
+          <div *ngIf="studentStudentId.errors?.required && studentStudentId.touched" class="alert alert-danger">
+              Add a valid Student ID
+            </div> 
+            <div *ngIf="studentStudentId.errors?.minlength && studentStudentId.touched" class="alert alert-danger">
+                Add a valid Student ID
+              </div> 
+        </div>
+  
+        <input type="submit" class="btn btn-primary btn-block" value="Submit">
+      </form>
+    </div>
+  </div>
