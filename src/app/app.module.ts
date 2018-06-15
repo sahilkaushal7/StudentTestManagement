@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from "@angular/forms";
 //angular fire imports
@@ -17,18 +17,24 @@ import { HomeComponent } from './components/home/home.component';
 import { StudentsComponent } from './components/students/students.component';
 
 //service imports
+import { AuthGuard } from "./guards/auth.gaurd";
+import { AuthService } from './services/auth.service';
 import { StudentsService } from './services/students.service';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AddstudentComponent } from './components/addstudent/addstudent.component';
 import { StudentdetailsComponent } from './components/studentdetails/studentdetails.component';
+import { EditstudentComponent } from './components/editstudent/editstudent.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 const appRoutes: Routes = [
-  {path:'', component:HomeComponent},
+  {path:'', component:HomeComponent,canActivate:[AuthGuard]},
+  {path:'dashboard', component:DashboardComponent,canActivate:[AuthGuard]},
   {path:'register', component:RegisterComponent},
   {path:'login', component:LoginComponent},
-  {path:'addstudent', component:AddstudentComponent},
-  {path:'students/:id', component:StudentdetailsComponent}
+  {path:'addstudent', component:AddstudentComponent,canActivate:[AuthGuard]},
+  {path:'students/:id', component:StudentdetailsComponent,canActivate:[AuthGuard]},
+  {path:'editstudent/:id', component:EditstudentComponent,canActivate:[AuthGuard]}
 ];
 
 export const firebaseConfig = {
@@ -49,7 +55,9 @@ messagingSenderId: "442100177507"}
     StudentsComponent,
     SidebarComponent,
     AddstudentComponent,
-    StudentdetailsComponent
+    StudentdetailsComponent,
+    EditstudentComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +68,8 @@ messagingSenderId: "442100177507"}
   providers: [
     AngularFireAuth,
     AngularFireDatabase,
-    StudentsService
+    StudentsService,AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

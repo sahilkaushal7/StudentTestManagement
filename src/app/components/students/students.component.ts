@@ -18,7 +18,6 @@ export class StudentsComponent implements OnInit {
     this.studentService.getStudents().valueChanges().subscribe(students =>
       {
           this.students = students;
-          console.log(this.students);
       }); 
   }
 

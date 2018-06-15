@@ -10,7 +10,7 @@ import { Student} from "../../models/Student";
 })
 export class StudentdetailsComponent implements OnInit {
   id:string;
-  student:any;
+  student:Student;
   constructor(
     public studentService:StudentsService,
     public router:Router,
@@ -26,6 +26,15 @@ export class StudentdetailsComponent implements OnInit {
       console.log(this.student);
     });
     
+  }
+  onDeleteClick(id:string)
+  {
+    if(confirm('Are you sure, you want to delete this student?'))
+    { 
+      this.router.navigate(['/dashboard']);
+      this.studentService.deleteStudent(this.id);
+      alert('Student Deleted Successfully');
+    }
   }
   
 

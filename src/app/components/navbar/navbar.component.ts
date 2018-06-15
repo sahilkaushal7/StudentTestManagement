@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  isLoggedIn:boolean;
+  loggedInUser:string;
+  showRegister:boolean;
 
-  constructor() { }
+  constructor(
+    private authService:AuthService,
+    private router:Router,
+    // private flashMessagesService: FlashMessagesService
+  ) { }
 
   ngOnInit() {
+    this.authService.getAuth().subscribe(auth => {
+      if(auth){
+        this.isLoggedIn = true;
+        this.loggedInUser = auth.email;
+      } else {
+        this.isLoggedIn = false;
+      }
+    });
+    
+  }
+
+  onLogoutClick(){
+    this.authService.logout();
+    alert('Logged Out Succesfully');
+    this.router.navigate(['/login']);
   }
 
 }
