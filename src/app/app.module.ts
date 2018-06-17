@@ -17,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { StudentsComponent } from './components/students/students.component';
 
 //service imports
+import { TestService } from "./services/test.service";
 import { AuthGuard } from "./guards/auth.gaurd";
 import { AuthService } from './services/auth.service';
 import { StudentsService } from './services/students.service';
@@ -25,24 +26,41 @@ import { AddstudentComponent } from './components/addstudent/addstudent.componen
 import { StudentdetailsComponent } from './components/studentdetails/studentdetails.component';
 import { EditstudentComponent } from './components/editstudent/editstudent.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TestsComponent } from './components/tests/tests.component';
+import { AddtestsComponent } from './components/addtests/addtests.component';
+import { QuestionsComponent } from './components/questions/questions.component';
+import { StudenthomeComponent } from './components/studenthome/studenthome.component';
+import { TeacherhomeComponent } from './components/teacherhome/teacherhome.component';
+import { AdminhomeComponent } from './components/adminhome/adminhome.component';
+import { TaketestComponent } from './components/taketest/taketest.component';
+import { SubjectComponent } from './components/subject/subject.component';
 
 
 const appRoutes: Routes = [
   {path:'', component:HomeComponent,canActivate:[AuthGuard]},
   {path:'dashboard', component:DashboardComponent,canActivate:[AuthGuard]},
-  {path:'register', component:RegisterComponent},
+  {path:'addtest', component:AddtestsComponent,canActivate:[AuthGuard]},
+  {path:'questions', component:QuestionsComponent,canActivate:[AuthGuard]},
+  {path:'register', component:RegisterComponent,canActivate:[AuthGuard]},
   {path:'login', component:LoginComponent},
+  {path:'adminhome', component:AdminhomeComponent,canActivate:[AuthGuard]},
+  {path:'studenthome', component:StudenthomeComponent,canActivate:[AuthGuard]},
+  {path:'teacherhome', component:TeacherhomeComponent,canActivate:[AuthGuard]},
   {path:'addstudent', component:AddstudentComponent,canActivate:[AuthGuard]},
   {path:'students/:id', component:StudentdetailsComponent,canActivate:[AuthGuard]},
-  {path:'editstudent/:id', component:EditstudentComponent,canActivate:[AuthGuard]}
+  {path:'editstudent/:id', component:EditstudentComponent,canActivate:[AuthGuard]},
+  {path:'test', component:TestsComponent,canActivate:[AuthGuard]},
+  {path:'taketest', component:TaketestComponent,canActivate:[AuthGuard]},
+  {path:'subject/:id', component:SubjectComponent,canActivate:[AuthGuard]},
+  {path:'home', component:HomeComponent,canActivate:[AuthGuard]}
 ];
 
 export const firebaseConfig = {
-apiKey: "AIzaSyBYbX3kTI6XbY7zaykD90QmbjBhy3uvDJM",
-authDomain: "studenttestmanagement.firebaseapp.com",
-databaseURL: "https://studenttestmanagement.firebaseio.com",
-storageBucket: "studenttestmanagement.appspot.com",
-messagingSenderId: "442100177507"}
+  apiKey: "AIzaSyBYbX3kTI6XbY7zaykD90QmbjBhy3uvDJM",
+  authDomain: "studenttestmanagement.firebaseapp.com",
+  databaseURL: "https://studenttestmanagement.firebaseio.com",
+  storageBucket: "studenttestmanagement.appspot.com",
+  messagingSenderId: "442100177507"}
 
 @NgModule({
   declarations: [
@@ -57,7 +75,15 @@ messagingSenderId: "442100177507"}
     AddstudentComponent,
     StudentdetailsComponent,
     EditstudentComponent,
-    DashboardComponent
+    DashboardComponent,
+    TestsComponent,
+    AddtestsComponent,
+    QuestionsComponent,
+    StudenthomeComponent,
+    TeacherhomeComponent,
+    AdminhomeComponent,
+    TaketestComponent,
+    SubjectComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +95,7 @@ messagingSenderId: "442100177507"}
     AngularFireAuth,
     AngularFireDatabase,
     StudentsService,AuthService,
-    AuthGuard
+    AuthGuard,TestService
   ],
   bootstrap: [AppComponent]
 })

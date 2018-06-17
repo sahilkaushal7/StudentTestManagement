@@ -41,8 +41,8 @@ export class AddstudentComponent implements OnInit {
       })
       .catch((err) => {
       });
-      this.router.navigate(['/dashboard']);
-      alert("Student Successfully Added");
+      this.router.navigate(['/login']);
+      alert("Student Successfully Added. Please test the account");
     }
   }
 }

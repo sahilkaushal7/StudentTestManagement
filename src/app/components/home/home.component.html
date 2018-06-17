@@ -1,0 +1,5 @@
+<div *ngIf="isLoggedIn && loggedInUser != 'sahil@gmail.com'
+&& loggedInUser != 'sahilkaushal2013@gmail.com'"><app-studenthome></app-studenthome></div>
+<div *ngIf="isLoggedIn && loggedInUser == 'sahil@gmail.com'
+|| loggedInUser == 'sahilkaushal2013@gmail.com'"><app-teacherhome>
+</app-teacherhome></div>

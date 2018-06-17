@@ -25,10 +25,10 @@ export class EditstudentComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id']; 
+    console.log(this.id);
     this.studentService.getStudent(this.id).valueChanges().subscribe(student =>
     {
       this.student = student;
-      console.log(this.student);
     });
     
   }

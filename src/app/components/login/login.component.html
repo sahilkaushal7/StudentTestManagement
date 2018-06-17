@@ -1,20 +1,27 @@
 <div class="row">
-  <div class="col-md-6 offset-md-3">
-    <div class="card">
+  <div class="col-md-6 offset-md-3 ">
+    <div class="card loginpanel">
       <div class="card-block">
-        <img class="mx-auto d-block" src="" alt="">
-        <h1 class="text-center">Login</h1>
+        <img class="mx-auto d-block" src="../../../assets/Logo/imageedit_1_8019308805.png" height="150px" alt="Logo">
+        <h1 class="text-center" style="color:#0a3b64;">Login</h1>
         <form (submit)="onSubmit()">
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
-          </div>
-          <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
           </div>
-          <input type="submit" class="btn btn-primary btn-block" value="Submit">
+          <input type="submit" class="btn btn-block" value="Submit">
+          <div class="bg-dark mx-auto my-3 px-5">
+          <button type="button" class="btn btn-block " style="background-color: rgb(216, 46, 46); color:white;" (click)="onGoogle()">
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>&nbsp;Login with Google
+           </button>
+           <button type="button" class="btn btn-block btn-primary" (click)="onFacebook()">
+              <i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp;Login with Facebook
+           </button>
+          </div>
         </form>
+        
       </div>
     </div>
   </div>

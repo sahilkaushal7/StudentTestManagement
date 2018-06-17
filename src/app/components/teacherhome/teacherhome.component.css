@@ -1,0 +1,17 @@
+i{
+    font-size:200px;
+}
+
+.bg-primary
+{
+    background-color: #3a4df9;
+}
+.btn-green
+{
+    background-color: #2ec99a;
+    cursor: pointer;
+}
+.shadow
+{
+    box-shadow: 0px 0px 10px;
+}

@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.email, this.password)
       .then((res) => {
         alert("Successfully Registered");
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/login']);
       })
       .catch((err) => {
         alert("Try Again");
