@@ -20,6 +20,5 @@ export class TestService {
   newTest(test:any)
   {  
     this.ref = this.af.database.ref('/subjects/').push(test).key;
-    this.af.database.ref('/subjects/' + this.ref + '/subject/test/subjectid').set(this.ref);
   }
 }

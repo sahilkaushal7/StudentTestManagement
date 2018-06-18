@@ -11,18 +11,15 @@ import { Test } from '../../models/Test';
 })
 export class AddtestsComponent implements OnInit {
   test:Test = {
-    subject:{
-      test : {
-        option1:'',
-        option2:'',
-        option3:'',
-        option4:'',
-        subject:'',
-        question:'',
-        subjectid:'',
-        testid:''
-      }
-    }
+    option1:'',
+    option2:'',
+    option3:'',
+    option4:'',
+    subject:'',
+    subjectid:'',
+    question:'',
+    testid:''
+      
   }
   constructor(
     public router:Router,

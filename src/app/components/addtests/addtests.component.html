@@ -1,151 +1,151 @@
 <div class="row">
-    <div class="col-md-6">
-        <a href="#" routerLink="/questions" class="btn btn-link"><i class="fa fa-arrow-circle-o-left">&nbsp;Back To Questions List</i></a> 
-    </div>
-    <div class="col-md-6">
-  
-    </div>
+  <div class="col-md-6">
+      <a href="#" routerLink="/questions" class="btn btn-link"><i class="fa fa-arrow-circle-o-left">&nbsp;Back To Questions List</i></a> 
   </div>
-  <div class="card">
-      <div class="card-header">
-        Add Question
-      </div>
-      <div class="card-block">
-        <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input 
-              type="text"
-              class="form-control"
-              [(ngModel)]="test.subject.test.subject"
-              name="subject"
-              #testSubject="ngModel"
-              minlength="2"
-              required
-            >
-            <div *ngIf="test.subject.test.subject.errors?.required && test.subject.test.subject.touched" class="alert alert-danger">
-              Subject is required
-            </div>
-            <div *ngIf="test.subject.test.subject.errors?.minlength && test.subject.test.subject.touched" class="alert alert-danger">
-              Must be at least 2 characters
-            </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+<div class="card">
+    <div class="card-header">
+      Add Question
+    </div>
+    <div class="card-block">
+      <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input 
+            type="text"
+            class="form-control"
+            [(ngModel)]="test.subject"
+            name="subject"
+            #testSubject="ngModel"
+            minlength="2"
+            required
+          >
+          <div *ngIf="test.subject.errors?.required && test.subject.touched" class="alert alert-danger">
+            Subject is required
           </div>
-    
-          <div class="form-group">
-            <label for="question">Question</label>
+          <div *ngIf="test.subject.errors?.minlength && test.subject.touched" class="alert alert-danger">
+            Must be at least 2 characters
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="question">Question</label>
+          <input 
+            type="text"
+            class="form-control"
+            [(ngModel)]="test.question"
+            name="question"
+            #testQuestion="ngModel"
+            minlength="2"
+            required
+          >
+          <div *ngIf="test.question.errors?.required && test.question.touched" class="alert alert-danger">
+            Last name is required
+          </div>
+          <div *ngIf="test.question.errors?.minlength && test.question.touched" class="alert alert-danger">
+            Must be at least 2 characters
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="option1">Option 1</label>
             <input 
               type="text"
               class="form-control"
-              [(ngModel)]="test.subject.test.question"
-              name="question"
-              #testQuestion="ngModel"
+              [(ngModel)]="test.option1"
+              name="option1"
+              #testOption1="ngModel"
               minlength="2"
               required
             >
-            <div *ngIf="test.subject.test.question.errors?.required && test.subject.test.question.touched" class="alert alert-danger">
+            <div *ngIf="test.option1.errors?.required && test.option1.touched" class="alert alert-danger">
               Last name is required
             </div>
-            <div *ngIf="test.subject.test.question.errors?.minlength && test.subject.test.question.touched" class="alert alert-danger">
+            <div *ngIf="test.option1.errors?.minlength && test.option1.touched" class="alert alert-danger">
               Must be at least 2 characters
             </div>
           </div>
-  
+
           <div class="form-group">
-              <label for="option1">Option 1</label>
+              <label for="option2">Option 2</label>
               <input 
                 type="text"
                 class="form-control"
-                [(ngModel)]="test.subject.test.option1"
-                name="option1"
-                #testOption1="ngModel"
+                [(ngModel)]="test.option2"
+                name="option2"
+                #testOption2="ngModel"
                 minlength="2"
                 required
               >
-              <div *ngIf="test.subject.test.option1.errors?.required && test.subject.test.option1.touched" class="alert alert-danger">
+              <div *ngIf="test.option2.errors?.required && test.option2.touched" class="alert alert-danger">
                 Last name is required
               </div>
-              <div *ngIf="test.subject.test.option1.errors?.minlength && test.subject.test.option1.touched" class="alert alert-danger">
+              <div *ngIf="test.option2.errors?.minlength && test.option2.touched" class="alert alert-danger">
                 Must be at least 2 characters
               </div>
             </div>
-  
+
             <div class="form-group">
-                <label for="option2">Option 2</label>
+                <label for="option3">option3</label>
                 <input 
                   type="text"
                   class="form-control"
-                  [(ngModel)]="test.subject.test.option2"
-                  name="option2"
-                  #testOption2="ngModel"
+                  [(ngModel)]="test.option3"
+                  name="option3"
+                  #testOption3="ngModel"
                   minlength="2"
                   required
                 >
-                <div *ngIf="test.subject.test.option2.errors?.required && test.subject.test.option2.touched" class="alert alert-danger">
+                <div *ngIf="test.option3.errors?.required && test.option3.touched" class="alert alert-danger">
                   Last name is required
                 </div>
-                <div *ngIf="test.subject.test.option2.errors?.minlength && test.subject.test.option2.touched" class="alert alert-danger">
+                <div *ngIf="test.option3.errors?.minlength && test.option3.touched" class="alert alert-danger">
                   Must be at least 2 characters
                 </div>
               </div>
-  
+
               <div class="form-group">
-                  <label for="option3">option3</label>
+                  <label for="option4">Option 4</label>
                   <input 
                     type="text"
                     class="form-control"
-                    [(ngModel)]="test.subject.test.option3"
-                    name="option3"
-                    #testOption3="ngModel"
+                    [(ngModel)]="test.option4"
+                    name="option4"
+                    #testOption4="ngModel"
                     minlength="2"
                     required
                   >
-                  <div *ngIf="test.subject.test.option3.errors?.required && test.subject.test.option3.touched" class="alert alert-danger">
+                  <div *ngIf="test.option4.errors?.required && test.option4.touched" class="alert alert-danger">
                     Last name is required
                   </div>
-                  <div *ngIf="test.subject.test.option3.errors?.minlength && test.subject.test.option3.touched" class="alert alert-danger">
+                  <div *ngIf="test.option4.errors?.minlength && test.option4.touched" class="alert alert-danger">
                     Must be at least 2 characters
                   </div>
                 </div>
-  
                 <div class="form-group">
-                    <label for="option4">Option 4</label>
+                    <label for="option4">Test ID</label>
                     <input 
                       type="text"
                       class="form-control"
-                      [(ngModel)]="test.subject.test.option4"
-                      name="option4"
+                      [(ngModel)]="test.testid"
+                      name="testid"
                       #testOption4="ngModel"
                       minlength="2"
                       required
                     >
-                    <div *ngIf="test.subject.test.option4.errors?.required && test.subject.test.option4.touched" class="alert alert-danger">
+                    <div *ngIf="test.option4.errors?.required && test.option4.touched" class="alert alert-danger">
                       Last name is required
                     </div>
-                    <div *ngIf="test.subject.test.option4.errors?.minlength && test.subject.test.option4.touched" class="alert alert-danger">
+                    <div *ngIf="test.option4.errors?.minlength && test.option4.touched" class="alert alert-danger">
                       Must be at least 2 characters
                     </div>
                   </div>
-                  <div class="form-group">
-                      <label for="option4">Test ID</label>
-                      <input 
-                        type="text"
-                        class="form-control"
-                        [(ngModel)]="test.subject.test.testid"
-                        name="testid"
-                        #testOption4="ngModel"
-                        minlength="2"
-                        required
-                      >
-                      <div *ngIf="test.subject.test.option4.errors?.required && test.subject.test.option4.touched" class="alert alert-danger">
-                        Last name is required
-                      </div>
-                      <div *ngIf="test.subject.test.option4.errors?.minlength && test.subject.test.option4.touched" class="alert alert-danger">
-                        Must be at least 2 characters
-                      </div>
-                    </div>
-    
-          
-          <input type="submit" class="btn btn-primary btn-block" value="Submit">
-        </form>
-      </div>
+  
+        
+        <input type="submit" class="btn btn-primary btn-block" value="Submit">
+      </form>
     </div>
+  </div>

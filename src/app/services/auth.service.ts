@@ -46,9 +46,4 @@ signInWithFacebook() {
       err => reject(err))
     });
   }
-
-  updateUser()
-  {
-    this.afAuth.auth.createUserWithEmailAndPassword();
-  }
 }
