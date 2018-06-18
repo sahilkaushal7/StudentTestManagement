@@ -3,11 +3,10 @@
     <h2><i class="fa fa-users"></i>&nbsp;Questions</h2>
   </div>
 </div>
-<table *ngIf="tests?.length> 0;else noTests" class="table table-striped">
+<table *ngFor="let test of tests" class="table table-striped">
   <thead class="thead-inverse">
     <tr>
       <th>Subject</th>
-      <th>Test ID</th>
       <th>Question</th>
       <th>Option 1</th>
       <th>Option 2</th>
@@ -16,55 +15,48 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let test of tests">
-        <td *ngIf="test.subject == 'Hindi'">{{test.subject}}</td>
-        <td *ngIf="test.subject == 'Hindi'">{{test.testid}}</td>
-        <td *ngIf="test.subject == 'Hindi'">{{test.question}}</td>
-        <td *ngIf="test.subject == 'Hindi'">{{test.option1}}</td>
-        <td *ngIf="test.subject == 'Hindi'">{{test.option2}}</td>
-        <td *ngIf="test.subject == 'Hindi'">{{test.option3}}</td>
-        <td *ngIf="test.subject == 'Hindi'">{{test.option4}}</td>
+    <tr *ngFor="let n of h">
+        <td *ngIf="test[n].subject=='Hindi'">{{test[n].subject}}</td>
+        <td *ngIf="test[n].subject=='Hindi'">{{test[n].question}}</td>
+        <td *ngIf="test[n].subject=='Hindi'">{{test[n].option1}}</td>
+        <td *ngIf="test[n].subject=='Hindi'">{{test[n].option2}}</td>
+        <td *ngIf="test[n].subject=='Hindi'">{{test[n].option3}}</td>
+        <td *ngIf="test[n].subject=='Hindi'">{{test[n].option4}}</td>
     </tr>
+    <tr *ngFor="let n of [n]">
+        <td *ngIf="test[n].subject=='English'">{{test[n].subject}}</td>
+        <td *ngIf="test[n].subject=='English'">{{test[n].question}}</td>
+        <td *ngIf="test[n].subject=='English'">{{test[n].option1}}</td>
+        <td *ngIf="test[n].subject=='English'">{{test[n].option2}}</td>
+        <td *ngIf="test[n].subject=='English'">{{test[n].option3}}</td>
+        <td *ngIf="test[n].subject=='English'">{{test[n].option4}}</td>
+    </tr>
+    <tr *ngFor="let n of m">
+        <td *ngIf="test[n].subject=='Maths'">{{test[n].subject}}</td>
+        <td *ngIf="test[n].subject=='Maths'">{{test[n].question}}</td>
+        <td *ngIf="test[n].subject=='Maths'">{{test[n].option1}}</td>
+        <td *ngIf="test[n].subject=='Maths'">{{test[n].option2}}</td>
+        <td *ngIf="test[n].subject=='Maths'">{{test[n].option3}}</td>
+        <td *ngIf="test[n].subject=='Maths'">{{test[n].option4}}</td>
+    </tr>
+    <tr *ngFor="let n of s">
+        <td *ngIf="test[n].subject=='Science'">{{test[n].subject}}</td>
+        <td *ngIf="test[n].subject=='Science'">{{test[n].question}}</td>
+        <td *ngIf="test[n].subject=='Science'">{{test[n].option1}}</td>
+        <td *ngIf="test[n].subject=='Science'">{{test[n].option2}}</td>
+        <td *ngIf="test[n].subject=='Science'">{{test[n].option3}}</td>
+        <td *ngIf="test[n].subject=='Science'">{{test[n].option4}}</td>
+    </tr>
+    <tr *ngFor="let n of ss">
+        <td *ngIf="test[n].subject=='SST'">{{test[n].subject}}</td>
+        <td *ngIf="test[n].subject=='SST'">{{test[n].question}}</td>
+        <td *ngIf="test[n].subject=='SST'">{{test[n].option1}}</td>
+        <td *ngIf="test[n].subject=='SST'">{{test[n].option2}}</td>
+        <td *ngIf="test[n].subject=='SST'">{{test[n].option3}}</td>
+        <td *ngIf="test[n].subject=='SST'">{{test[n].option4}}</td>
+    </tr>
+    
     <br>
-    <tr *ngFor="let test of tests">
-      <td *ngIf="test.subject == 'Maths'">{{test.subject}}</td>
-      <td *ngIf="test.subject == 'Maths'">{{test.testid}}</td>
-      <td *ngIf="test.subject == 'Maths'">{{test.question}}</td>
-      <td *ngIf="test.subject == 'Maths'">{{test.option1}}</td>
-      <td *ngIf="test.subject == 'Maths'">{{test.option2}}</td>
-      <td *ngIf="test.subject == 'Maths'">{{test.option3}}</td>
-      <td *ngIf="test.subject == 'Maths'">{{test.option4}}</td>
-  </tr>
-  <br>
-  <tr *ngFor="let test of tests">
-    <td *ngIf="test.subject == 'Science'">{{test.subject}}</td>
-    <td *ngIf="test.subject == 'Science'">{{test.testid}}</td>
-    <td *ngIf="test.subject == 'Science'">{{test.question}}</td>
-    <td *ngIf="test.subject == 'Science'">{{test.option1}}</td>
-    <td *ngIf="test.subject == 'Science'">{{test.option2}}</td>
-    <td *ngIf="test.subject == 'Science'">{{test.option3}}</td>
-    <td *ngIf="test.subject == 'Science'">{{test.option4}}</td>
-</tr>
-<br>
-<tr *ngFor="let test of tests">
-  <td *ngIf="test.subject == 'English'">{{test.subject}}</td>
-  <td *ngIf="test.subject == 'English'">{{test.testid}}</td>
-  <td *ngIf="test.subject == 'English'">{{test.question}}</td>
-  <td *ngIf="test.subject == 'English'">{{test.option1}}</td>
-  <td *ngIf="test.subject == 'English'">{{test.option2}}</td>
-  <td *ngIf="test.subject == 'English'">{{test.option3}}</td>
-  <td *ngIf="test.subject == 'English'">{{test.option4}}</td>
-</tr>
-<br>
-<tr *ngFor="let test of tests">
-  <td *ngIf="test.subject == 'SST'">{{test.subject}}</td>
-  <td *ngIf="test.subject == 'SST'">{{test.testid}}</td>
-  <td *ngIf="test.subject == 'SST'">{{test.question}}</td>
-  <td *ngIf="test.subject == 'SST'">{{test.option1}}</td>
-  <td *ngIf="test.subject == 'SST'">{{test.option2}}</td>
-  <td *ngIf="test.subject == 'SST'">{{test.option3}}</td>
-  <td *ngIf="test.subject == 'SST'">{{test.option4}}</td>
-</tr>
   </tbody> 
 </table>
 

@@ -11,14 +11,19 @@ import { Test } from '../../models/Test';
 })
 export class AddtestsComponent implements OnInit {
   test:Test = {
-    option1:'',
-    option2:'',
-    option3:'',
-    option4:'',
-    subject:'',
-    subjectid:'',
-    question:'',
-    testid:''
+    $key:
+      {$key:
+        {
+        subject:'',
+        option1:'',
+        option2:'',
+        option3:'',
+        option4:'',
+        quesiton:'',
+        subjectid:'',
+        testid:''
+       }
+    }
       
   }
   constructor(
