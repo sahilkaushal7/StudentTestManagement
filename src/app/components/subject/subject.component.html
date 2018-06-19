@@ -1,36 +1,29 @@
 
 <div class="row">
   <div class="col-md-6">
-    <h2><i class="fa fa-users"></i>&nbsp;Questions({{this.subject}})</h2>
+    <h2><i class="fa fa-users"></i>&nbsp;Questions({{tests[0].subject}})</h2>
   </div>
 </div>
-<table *ngIf="tests?.length> 0;else noTests" class="table table-striped">
-  <thead class="thead-inverse">
-    <tr>
-      <th>Subject</th>
-      <th>Test ID</th>
-      <th>Question</th>
-      <th>Option 1</th>
-      <th>Option 2</th>
-      <th>Option 3</th>
-      <th>Option 4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let test of tests">
-        <td *ngIf="test.subject == this.subject">{{test.subject}}</td>
-        <td *ngIf="test.subject == this.subject">{{test.testid}}</td>
-        <td *ngIf="test.subject == this.subject">{{test.question}}</td>
-        <td *ngIf="test.subject == this.subject">{{test.option1}}</td>
-        <td *ngIf="test.subject == this.subject">{{test.option2}}</td>
-        <td *ngIf="test.subject == this.subject">{{test.option3}}</td>
-        <td *ngIf="test.subject == this.subject">{{test.option4}}</td>
-    </tr>
-    <br>
-  <br>
-  </tbody> 
-</table>
-
+<form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+<table *ngFor="let n of [0,1,2,3,4]" class="table">
+    <thead  class="thead-dark">
+      <tr>
+        <th scope="col" colspan="3">Question : {{tests[n].question}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="radio" value="{{tests[n].option1}}" name="{{n}}" id="{{n}}"> {{tests[n].option1}}</td>
+        <td><input type="radio" value="{{tests[n].option2}}" name="{{n}}" id="{{n}}"> {{tests[n].option2}}</td>
+      </tr>
+      <tr>
+        <td><input type="radio" value="{{tests[n].option3}}" name="{{n}}" id="{{n}}"> {{tests[n].option3}}</td>
+        <td><input type="radio" value="{{tests[n].option4}}" name="{{n}}" id="{{n}}"> {{tests[n].option4}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="submit" class="btn btn-primary btn-block" value="Submit">
+</form>
 <ng-template #noTests>
   <hr>
   <h5>There are no questions in the system</h5>

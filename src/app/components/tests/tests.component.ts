@@ -13,7 +13,7 @@ export class TestsComponent implements OnInit {
   m:number[]= new Array();
   s:number[]= new Array();
   ss:number[]= new Array();
-  
+  element:any[] = new Array();
   
   constructor(public testService:TestService) 
   { 
@@ -38,14 +38,6 @@ export class TestsComponent implements OnInit {
           for(let i = 0;i<this.tests[4].length;i++){
             this.ss.push(i);
           }
-          console.log(this.ss);
-          console.log(this.s);
-          console.log(this.m);
-          console.log(this.h);
-          console.log(this.e);
-
-
-
       }); 
   }
 }

@@ -51,7 +51,7 @@ const appRoutes: Routes = [
   {path:'editstudent/:id', component:EditstudentComponent,canActivate:[AuthGuard]},
   {path:'test', component:TestsComponent,canActivate:[AuthGuard]},
   {path:'taketest', component:TaketestComponent,canActivate:[AuthGuard]},
-  {path:'subject', component:SubjectComponent,canActivate:[AuthGuard]},
+  {path:'subject/:id', component:SubjectComponent,canActivate:[AuthGuard]},
   {path:'home', component:HomeComponent,canActivate:[AuthGuard]}
 ];
 

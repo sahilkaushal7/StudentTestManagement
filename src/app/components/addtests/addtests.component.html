@@ -20,7 +20,7 @@
             [(ngModel)]="test.subject"
             name="subject"
             #testSubject="ngModel"
-            minlength="5"
+            minlength="3"
             required
           >
         </div>
@@ -89,6 +89,18 @@
                     required
                   >
                 </div>
+                <div class="form-group">
+                    <label for="CO">Correct Option</label>
+                    <input 
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="test.co"
+                      name="CO"
+                      #CO="ngModel"
+                      minlength="1"
+                      required
+                    >
+                  </div>
   
         
         <input type="submit" class="btn btn-primary btn-block" value="Submit">

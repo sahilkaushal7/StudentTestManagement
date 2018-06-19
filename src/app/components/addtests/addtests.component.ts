@@ -21,7 +21,8 @@ export class AddtestsComponent implements OnInit {
         option4:'',
         quesiton:'',
         subjectid:'',
-        testid:''
+        testid:'',
+        co:''
        }
     }
       

@@ -9,6 +9,7 @@ export interface Test {
             option4?:String;
             testid?:String;
             subjectid?:String;
+            co?:String;    
          }
      }  
 }

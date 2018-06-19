@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChoosesubjectService } from '../../services/choosesubject.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Test } from '../../models/Test';
 
 @Component({
   selector: 'app-taketest',
@@ -7,27 +9,14 @@ import { ChoosesubjectService } from '../../services/choosesubject.service';
   styleUrls: ['./taketest.component.css']
 })
 export class TaketestComponent implements OnInit {
-  subject:String;
+  id:string;
   constructor(
     public choosesubject:ChoosesubjectService,
+    public router:Router,
+    public route:ActivatedRoute
   ) { }
 
   ngOnInit() {
   }
-  Subject(subject)
-  { 
-    switch(subject)
-    {
-        case 'Hindi' : this.choosesubject.selectedsubject('Hindi');
-        break;
-        case 'English' : this.choosesubject.selectedsubject('English');
-        break;
-        case 'Maths' : this.choosesubject.selectedsubject('Maths');
-        break;
-        case 'Science' : this.choosesubject.selectedsubject('Science');
-        break;
-        case 'SST' : this.choosesubject.selectedsubject('SST');
-        break;
-    }
-  }
+
 }

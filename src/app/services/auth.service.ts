@@ -1,14 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable,OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import  { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireDatabase} from 'angularfire2/database';
 import * as firebase from 'firebase/app';
+import * as admin from 'firebase-admin';
 
 @Injectable()
-export class AuthService {
+export class AuthService implements OnInit {
 
   constructor(public afAuth:AngularFireAuth) { }
+  ngOnInit()
+  {
+  
+  }
   // //google signin
   signInWithGoogle() {
     return this.afAuth.auth.signInWithPopup(
@@ -41,9 +46,12 @@ signInWithFacebook() {
   register(email:string,password:string)
   {
     return new Promise((resolve, reject) => {
-      this.afAuth.auth.createUserWithEmailAndPassword(email,password).then
-      (userData => resolve(userData),
-      err => reject(err))
+      this.afAuth.auth.createUserWithEmailAndPassword(email,password)
     });
   }
+  getAdmin()
+  {
+    
+  }
+  
 }
