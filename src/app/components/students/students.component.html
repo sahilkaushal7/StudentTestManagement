@@ -3,7 +3,7 @@
       <h2><i class="fa fa-users"></i>&nbsp;Students</h2>
     </div>
   </div>
-  <table *ngIf="students?.length > 0;else noStudents " class="table table-striped">
+  <table *ngIf="students?.length> 0;else noStudents " class="table table-striped">
     <thead class="thead-inverse">
       <tr>
         <th>Name</th>
@@ -14,10 +14,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let student of students">
-        <td>{{student.firstName}} {{student.lastName}}</td>
-        <td>{{student.email}}</td>
-        <td>{{student.studentid}}</td>
-        <td><a href="" [routerLink]="['/students/'+student.studentid]" class="btn btn-secondary btn-sm">
+        <td *ngIf="student.role == 'student'">{{student.firstName}} {{student.lastName}}</td>
+        <td *ngIf="student.role == 'student'">{{student.email}}</td>
+        <td *ngIf="student.role == 'student'">{{student.studentid}}</td>
+        <td *ngIf="student.role == 'student'"><a href="" [routerLink]="['/students/'+student.studentid]" class="btn btn-secondary btn-sm">
           <i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
       </tr>
     </tbody>

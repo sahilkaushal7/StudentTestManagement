@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6">
-      <a href="#" routerLink="/dashboard" class="btn btn-link"><i class="fa fa-arrow-circle-o-left">&nbsp;Back To Students List</i></a> 
+      <a href="#" routerLink="/home" class="btn btn-link"><i class="fa fa-arrow-circle-o-left">&nbsp;Back To Home</i></a> 
   </div>
   <div class="col-md-6">
 
@@ -8,7 +8,7 @@
 </div>
 <div class="card">
     <div class="card-header">
-      Add student
+      Add teacher
     </div>
     <div class="card-block">
       <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
@@ -17,7 +17,7 @@
           <input 
             type="text"
             class="form-control"
-            [(ngModel)]="student.firstName"
+            [(ngModel)]="teacher.firstName"
             name="firstName"
             #studentFirstName="ngModel"
             minlength="2"
@@ -36,7 +36,7 @@
           <input 
             type="text"
             class="form-control"
-            [(ngModel)]="student.lastName"
+            [(ngModel)]="teacher.lastName"
             name="lastName"
             #studentLastName="ngModel"
             minlength="2"
@@ -55,7 +55,7 @@
           <input 
             type="email"
             class="form-control"
-            [(ngModel)]="student.email"
+            [(ngModel)]="teacher.email"
             name="email"
             #studentEmail="ngModel"
             minlength="5"
@@ -74,7 +74,7 @@
           <input 
             type="text"
             class="form-control"
-            [(ngModel)]="student.phone"
+            [(ngModel)]="teacher.phone"
             name="phone"
             #studentPhone="ngModel"
             minlength="10"
@@ -88,15 +88,15 @@
             </div>
         </div>
         <div class="form-group">
-          <label for="role">Role</label>
+          <label for="phone">Role</label>
           <select
           type="text"
             class="form-control"
-            [(ngModel)]="student.role"
+            [(ngModel)]="teacher.role"
             name="role"
             #role="ngModel"
             required>
-            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
           </select>
         </div>
         

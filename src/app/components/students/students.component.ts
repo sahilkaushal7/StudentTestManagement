@@ -16,7 +16,7 @@ export class StudentsComponent implements OnInit {
   }  
   ngOnInit() {
     this.studentService.getStudents().valueChanges().subscribe(students =>
-      {
+      {   
           this.students = students;
       }); 
   }

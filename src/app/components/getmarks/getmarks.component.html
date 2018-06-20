@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2><i class="fa fa-users"></i>&nbsp;Marks</h2>
+  </div>
+</div>
+<table *ngIf="marks?.length > 0;else noStudents " class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Student Email</th>
+      <th>Attempt No</th>
+      <th>Marks Out Of 50</th>
+      <th>Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mark of marks;let i = index" [attr.data-index]='i'>
+      <td>{{mark.email}}</td>
+      <td>Attempt {{mark.attempt.length}}</td>
+      <td>{{mark.marks}}</td>
+      <td>{{mark.subject}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noStudents>
+  <hr>
+  <h5>There are no Marks in the system</h5>
+</ng-template>

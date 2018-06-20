@@ -34,6 +34,9 @@ import { TeacherhomeComponent } from './components/teacherhome/teacherhome.compo
 import { AdminhomeComponent } from './components/adminhome/adminhome.component';
 import { TaketestComponent } from './components/taketest/taketest.component';
 import { SubjectComponent } from './components/subject/subject.component';
+import { GetmarksComponent } from './components/getmarks/getmarks.component';
+import { AddteacherComponent } from './components/addteacher/addteacher.component';
+import { TeacherComponent } from './components/teacher/teacher.component';
 
 
 const appRoutes: Routes = [
@@ -52,7 +55,10 @@ const appRoutes: Routes = [
   {path:'test', component:TestsComponent,canActivate:[AuthGuard]},
   {path:'taketest', component:TaketestComponent,canActivate:[AuthGuard]},
   {path:'subject/:id', component:SubjectComponent,canActivate:[AuthGuard]},
-  {path:'home', component:HomeComponent,canActivate:[AuthGuard]}
+  {path:'home', component:HomeComponent,canActivate:[AuthGuard]},
+  {path:'getmarks', component:GetmarksComponent,canActivate:[AuthGuard]},
+  {path:'addteacher', component:AddteacherComponent,canActivate:[AuthGuard]},
+  {path:'teacher', component:TeacherComponent,canActivate:[AuthGuard]},
 ];
 
 export const firebaseConfig = {
@@ -83,7 +89,10 @@ export const firebaseConfig = {
     TeacherhomeComponent,
     AdminhomeComponent,
     TaketestComponent,
-    SubjectComponent
+    SubjectComponent,
+    GetmarksComponent,
+    AddteacherComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,

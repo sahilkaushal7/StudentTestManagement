@@ -2,43 +2,67 @@
       
       <a class="navbar-brand" href="#"><i class="fa fa-graduation-cap"></i>&nbsp;Student Test Management</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span ><i class="fa fa-toggle-down mt-auto"></i></span>
       </button>
+      
+      <div *ngFor="let user of students">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li *ngIf="isLoggedIn && user.role=='teacher' && loggedInUser == user.email" class="nav-item">
+              <a class="nav-link" href="#" routerLink="/teacherhome">Home</a>
+            </li>   
+            <li *ngIf="isLoggedIn && user.role=='student' && loggedInUser == user.email" class="nav-item">
+              <a class="nav-link" href="#" routerLink="/studenthome">Home</a>
+            </li>
+            <li *ngIf="isLoggedIn && user.role=='teacher' && loggedInUser == user.email " class="nav-item">
+              <a class="nav-link" href="#" routerLink="/dashboard">Students</a>
+            </li> 
+            <li *ngIf="isLoggedIn && user.role=='teacher' && loggedInUser == user.email " class="nav-item">
+              <a class="nav-link" href="#" routerLink="/questions">Questions</a>
+            </li> 
+          </ul>    
+        </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault" 
+      *ngIf="isLoggedIn  && loggedInUser == 'sahilkaushal2013@gmail.com'">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/adminhome">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/addteacher">Add Teacher</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/dashboard">Students</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/questions">Questions</a>
+        </li> 
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        
+      <li *ngIf="isLoggedIn" class="nav-item">
+           <a class="nav-link" href="#">
+            <img src="{{userPhotoUrl}}" height="30" width="30">{{loggedInUser}}</a>
+        </li> 
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
+        </li> 
+      </ul> 
+    </div>
+    <ul class="navbar-nav ml-auto" *ngIf="loggedInUser !='sahilkaushal2013@gmail.com'">
+        
+      <li *ngIf="isLoggedIn" class="nav-item">
+           <a class="nav-link" href="#">
+            <img src="{{userPhotoUrl}}" height="30" width="30">{{loggedInUser}}</a>
+        </li> 
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
+        </li> 
+        <li *ngIf="!isLoggedIn" class="nav-item">
+          <a class="nav-link" href="#" routerLink="/login">Login</a>
+        </li> 
+      </ul> 
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li *ngIf="isLoggedIn && loggedInUser == 'sahil@gmail.com'
-          || loggedInUser == 'sahilkaushal2013@gmail.com'" class="nav-item">
-            <a class="nav-link" href="#" routerLink="/teacherhome">Home</a>
-          </li> 
-          <li *ngIf="isLoggedIn && loggedInUser != 'sahil@gmail.com'
-          && loggedInUser != 'sahilkaushal2013@gmail.com'" class="nav-item">
-            <a class="nav-link" href="#" routerLink="/studenthome">Home</a>
-          </li>
-          <li *ngIf="isLoggedIn && loggedInUser == 'sahil@gmail.com'
-          || loggedInUser == 'sahilkaushal2013@gmail.com'" class="nav-item">
-            <a class="nav-link" href="#" routerLink="/dashboard">Students</a>
-          </li> 
-          <li *ngIf="isLoggedIn && loggedInUser == 'sahil@gmail.com'
-          || loggedInUser == 'sahilkaushal2013@gmail.com'" class="nav-item">
-            <a class="nav-link" href="#" routerLink="/questions">Questions</a>
-          </li> 
-        </ul>    
-
-        <ul class="navbar-nav ml-auto">
-          <li *ngIf="!isLoggedIn" class="nav-item">
-            <a class="nav-link" href="#" routerLink="/login">Login</a>
-          </li> 
-          <li *ngIf="isLoggedIn" class="nav-item">
-
-            <a class="nav-link" href="#">
-              <img src="{{userPhotoUrl}}" height="30" width="30">&nbsp;{{loggedInUser}}</a>
-          </li> 
-          <li *ngIf="isLoggedIn" class="nav-item">
-            <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
-          </li> 
-        </ul>   
-      </div>
-     
     </nav>
     <br>

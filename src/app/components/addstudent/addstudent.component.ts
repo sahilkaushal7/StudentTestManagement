@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { Student } from "../../models/Student";
 import { StudentsService } from "../../services/students.service";
 import { AuthService } from '../../services/auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 @Component({
   selector: 'app-addstudent',
   templateUrl: './addstudent.component.html',
@@ -19,6 +20,7 @@ export class AddstudentComponent implements OnInit {
     studentid:''
   }
   constructor(
+    public afAuth : AngularFireAuth,
     public router:Router,
     public studentService:StudentsService,
     private authService:AuthService,
@@ -33,16 +35,17 @@ export class AddstudentComponent implements OnInit {
       alert("Please fill the form correctly");
     }
     else
-    {
+    { 
       this.studentService.newStudent(value);
-      this.authService.register(value.email as string,'123456')
-      .then((res) => {
+      this.authService.register(value.email as string,'123').then((res) => {
         console.log('Registered');
       })
       .catch((err) => {
       });
-      this.router.navigate(['/dashboard']);
-      alert("Student Successfully Added. Please test the account");
+      this.afAuth.auth.signOut();
+      this.router.navigate(['login']);
+      window.location.reload();
+      alert("Student Successfully Added. Please Login Again");
     }
   }
 }

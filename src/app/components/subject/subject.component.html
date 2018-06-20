@@ -4,7 +4,7 @@
     <h2><i class="fa fa-users"></i>&nbsp;Questions({{tests[0].subject}})</h2>
   </div>
 </div>
-<form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+<form novalidate #f="ngForm" (ngSubmit)="onSubmit()">
 <table *ngFor="let n of [0,1,2,3,4]" class="table">
     <thead  class="thead-dark">
       <tr>
@@ -13,12 +13,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><input type="radio" value="{{tests[n].option1}}" name="{{n}}" id="{{n}}"> {{tests[n].option1}}</td>
-        <td><input type="radio" value="{{tests[n].option2}}" name="{{n}}" id="{{n}}"> {{tests[n].option2}}</td>
+        <td><input (click) = "value(n,tests[n].option1)" type="radio" value="{{tests[n].option1}}" [name]="n" > {{tests[n].option1}}</td>
+        <td><input (click) = "value(n,tests[n].option2)" type="radio" value="{{tests[n].option2}}" [name]="n" > {{tests[n].option2}}</td>
       </tr>
       <tr>
-        <td><input type="radio" value="{{tests[n].option3}}" name="{{n}}" id="{{n}}"> {{tests[n].option3}}</td>
-        <td><input type="radio" value="{{tests[n].option4}}" name="{{n}}" id="{{n}}"> {{tests[n].option4}}</td>
+        <td><input (click) = "value(n,tests[n].option3)" type="radio" value="{{tests[n].option3}}" [name]="n" > {{tests[n].option3}}</td>
+        <td><input (click) = "value(n,tests[n].option4)" type="radio" value="{{tests[n].option4}}" [name]="n" > {{tests[n].option4}}</td>
       </tr>
     </tbody>
   </table>

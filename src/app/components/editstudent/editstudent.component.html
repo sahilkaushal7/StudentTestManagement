@@ -60,6 +60,7 @@
             #studentEmail="ngModel"
             minlength="5"
             required
+            disabled
           >
           <div *ngIf="studentEmail.errors?.required && studentEmail.touched" class="alert alert-danger">
             Email required
