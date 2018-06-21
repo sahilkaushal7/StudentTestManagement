@@ -22,7 +22,7 @@
     "@angular/router": "^6.0.3",
     "angular2-flash-messages": "^2.0.5",
     "angularfire2": "^5.0.0-rc.10",
-    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.5.4",
     "firebase": "^5.0.4",
     "firebase-admin": "^5.12.1",

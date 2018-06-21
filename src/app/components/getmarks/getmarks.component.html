@@ -7,7 +7,6 @@
   <thead class="thead-inverse">
     <tr>
       <th>Student Email</th>
-      <th>Attempt No</th>
       <th>Marks Out Of 50</th>
       <th>Subject</th>
     </tr>
@@ -15,7 +14,6 @@
   <tbody>
     <tr *ngFor="let mark of marks;let i = index" [attr.data-index]='i'>
       <td>{{mark.email}}</td>
-      <td>Attempt {{mark.attempt.length}}</td>
       <td>{{mark.marks}}</td>
       <td>{{mark.subject}}</td>
     </tr>
