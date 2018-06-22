@@ -1,0 +1,19 @@
+.navigation{
+    box-shadow: 0px 0px 20px 2px;
+    background-color: #222223; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 900;
+}
+a
+{
+cursor:pointer;
+color:white;
+}
+a:hover
+{
+    color:rgb(155, 150, 141);
+}
+button{
+    color:white;
+    
+}

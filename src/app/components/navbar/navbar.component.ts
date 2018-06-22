@@ -25,19 +25,19 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.studentService.getStudents().valueChanges().subscribe(students =>
-      {   
-          this.students= students;
-      }); 
+    
     this.authService.getAuth().subscribe(auth => {
       if(auth){
+        this.studentService.getStudents().valueChanges().subscribe(students =>
+          {   
+              this.students= students;
+          }); 
         this.isLoggedIn = true;
         this.loggedInUser = auth.email;
         this.userPhotoUrl = auth.photoURL;
       } else {
         this.isLoggedIn = false;
       }
-      console.log(this.loggedInUser);
     });
     
   }

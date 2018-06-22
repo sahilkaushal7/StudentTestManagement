@@ -3,6 +3,7 @@
     <h2><i class="fa fa-users"></i>&nbsp;Questions</h2>
   </div>
 </div>
+<div class="table-responsive">
 <table *ngFor="let test of tests" class="table table-striped">
   <thead class="thead-inverse">
     <tr>
@@ -26,7 +27,7 @@
     <br>
   </tbody> 
 </table>
-
+</div>
 <ng-template #noTests>
   <hr>
   <h5>There are no questions in the system</h5>

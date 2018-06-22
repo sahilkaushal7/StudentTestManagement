@@ -4,65 +4,25 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span ><i class="fa fa-toggle-down mt-auto"></i></span>
       </button>
-      
-      <div *ngFor="let user of students">
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <ul class="navbar-nav mr-auto">
-            <li *ngIf="isLoggedIn && user.role=='teacher' && loggedInUser == user.email" class="nav-item">
-              <a class="nav-link" href="#" routerLink="/teacherhome">Home</a>
-            </li>   
-            <li *ngIf="isLoggedIn && user.role=='student' && loggedInUser == user.email" class="nav-item">
-              <a class="nav-link" href="#" routerLink="/studenthome">Home</a>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <div *ngFor="let user of students"><div *ngIf="isLoggedIn && user.email == loggedInUser
+            && user.role == 'student'"><app-studentnav></app-studentnav></div>
+        <div *ngIf="isLoggedIn && user.email == loggedInUser && user.role == 'teacher'" ><app-teachernav></app-teachernav></div>
+        </div>
+        <div *ngIf="isLoggedIn && loggedInUser == 'stmuserlogin1234@gmail.com'"><app-adminnav>
+        </app-adminnav></div>
+        <ul class="navbar-nav ml-auto">
+            <li *ngIf="!isLoggedIn" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/login">Login</a>
             </li>
-            <li *ngIf="isLoggedIn && user.role=='teacher' && loggedInUser == user.email " class="nav-item">
-              <a class="nav-link" href="#" routerLink="/dashboard">Students</a>
+            <li *ngIf="isLoggedIn" class="nav-item">
+              <a class="nav-link" href="#">
+              <img src="{{userPhotoUrl}}" height="30" width="30">&nbsp;{{loggedInUser}}</a>
             </li> 
-            <li *ngIf="isLoggedIn && user.role=='teacher' && loggedInUser == user.email " class="nav-item">
-              <a class="nav-link" href="#" routerLink="/questions">Questions</a>
-            </li> 
-          </ul>    
-        </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault" 
-      *ngIf="isLoggedIn  && loggedInUser == 'stmuserlogin1234@gmail.com'">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/adminhome">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/addteacher">Add Teacher</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/dashboard">Students</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/questions">Questions</a>
-        </li> 
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        
-      <li *ngIf="isLoggedIn" class="nav-item">
-           <a class="nav-link" href="#">
-            <img src="{{userPhotoUrl}}" height="30" width="30">{{loggedInUser}}</a>
-        </li> 
-        <li *ngIf="isLoggedIn" class="nav-item">
-          <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
-        </li> 
-      </ul> 
-    </div>
-    <ul class="navbar-nav ml-auto" *ngIf="loggedInUser !='stmuserlogin1234@gmail.com'">
-        
-      <li *ngIf="isLoggedIn" class="nav-item">
-           <a class="nav-link" href="#">
-            <img src="{{userPhotoUrl}}" height="30" width="30">{{loggedInUser}}</a>
-        </li> 
-        <li *ngIf="isLoggedIn" class="nav-item">
-          <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
-        </li> 
-        <li *ngIf="!isLoggedIn" class="nav-item">
-          <a class="nav-link" href="#" routerLink="/login">Login</a>
-        </li> 
-      </ul> 
-
+            <li *ngIf="isLoggedIn" class="nav-item">
+              <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
+            </li>    
+        </ul>    
+      </div>
     </nav>
     <br>

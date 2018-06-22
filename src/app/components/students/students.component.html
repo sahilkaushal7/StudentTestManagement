@@ -3,6 +3,7 @@
       <h2><i class="fa fa-users"></i>&nbsp;Students</h2>
     </div>
   </div>
+  <div class="table-responsive">
   <table *ngIf="students?.length> 0;else noStudents " class="table table-striped">
     <thead class="thead-inverse">
       <tr>
@@ -22,7 +23,7 @@
       </tr>
     </tbody>
   </table>
-  
+  </div>
   <ng-template #noStudents>
     <hr>
     <h5>There are no students in the system</h5>

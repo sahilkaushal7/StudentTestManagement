@@ -49,17 +49,16 @@ export class SubjectComponent implements OnInit {
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
       if(auth){
-        this.loggedInUser = auth.email;
-      } else {
-      }
-    });
-    this.id = this.route.snapshot.params['id'];
+        this.id = this.route.snapshot.params['id'];
     this.testService.getTests().valueChanges().subscribe(tests =>
       { 
           this.tests = tests;
           this.tests = tests[this.id];
       });
-      
+        this.loggedInUser = auth.email;
+      } else {
+      }
+    });
   }
   onSubmit(){
     alert("You have scored " + this.marks + " out of 50");
@@ -75,7 +74,6 @@ export class SubjectComponent implements OnInit {
   {
     this.checked=checked;
     this.selected=selected;
-    console.log(this.checked + this.selected );
     if(this.checked == '0')
     {
       this.ans0 = this.selected;

@@ -16,7 +16,6 @@ export class GetmarksComponent implements OnInit {
     this.marksService.getMarks().valueChanges().subscribe(marks =>
       {
         this.marks=  marks;
-        console.log(this.marks);
       });
   }
   

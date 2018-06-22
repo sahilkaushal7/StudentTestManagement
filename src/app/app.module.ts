@@ -37,6 +37,9 @@ import { SubjectComponent } from './components/subject/subject.component';
 import { GetmarksComponent } from './components/getmarks/getmarks.component';
 import { AddteacherComponent } from './components/addteacher/addteacher.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
+import { StudentnavComponent } from './components/navbar/studentnav/studentnav.component';
+import { AdminnavComponent } from './components/navbar/adminnav/adminnav.component';
+import { TeachernavComponent } from './components/navbar/teachernav/teachernav.component';
 
 
 const appRoutes: Routes = [
@@ -92,7 +95,10 @@ export const firebaseConfig = {
     SubjectComponent,
     GetmarksComponent,
     AddteacherComponent,
-    TeacherComponent
+    TeacherComponent,
+    StudentnavComponent,
+    AdminnavComponent,
+    TeachernavComponent,
   ],
   imports: [
     BrowserModule,
