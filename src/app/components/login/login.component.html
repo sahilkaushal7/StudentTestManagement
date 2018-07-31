@@ -11,9 +11,10 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
           </div>
-          <input type="submit" class="btn btn-block" value="Submit">
-          <div class="bg-dark mx-auto my-3 px-5">
-          <button type="button" class="btn btn-block " style="background-color: rgb(216, 46, 46); color:white;" (click)="onGoogle()">
+          <input type="submit" class="btn btn-block mx-auto" value="Login" style="width: 200px;">
+          <div class="bg-dark mt-2">
+          <button type="button" class="btn btn-block  mx-auto" 
+          style="width: 200px; background-color: rgb(216, 46, 46); color:white;" (click)="onGoogle()">
               <i class="fa fa-google-plus-square" aria-hidden="true"></i>&nbsp;Login with Google
            </button>
           </div>

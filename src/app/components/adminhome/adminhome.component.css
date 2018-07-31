@@ -1,17 +1,19 @@
 i{
-    font-size:200px;
+    font-size:100px;
+    color:white;
 }
 
-.bg-primary
-{
-    background-color: #3a4df9;
-}
 .btn-green
 {
-    background-color: #2ec99a;
+    background-color: #3B945E;
     cursor: pointer;
+    color:white;
 }
 .shadow
 {
     box-shadow: 0px 0px 10px;
+}
+button:hover
+{
+    transform: scale(1.2);
 }

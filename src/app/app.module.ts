@@ -40,6 +40,8 @@ import { TeacherComponent } from './components/teacher/teacher.component';
 import { StudentnavComponent } from './components/navbar/studentnav/studentnav.component';
 import { AdminnavComponent } from './components/navbar/adminnav/adminnav.component';
 import { TeachernavComponent } from './components/navbar/teachernav/teachernav.component';
+import { AdminGuard } from './guards/admin.guard';
+import { TeacherGuard } from './guards/teacher.guard';
 
 
 const appRoutes: Routes = [
@@ -60,7 +62,7 @@ const appRoutes: Routes = [
   {path:'subject/:id', component:SubjectComponent,canActivate:[AuthGuard]},
   {path:'home', component:HomeComponent,canActivate:[AuthGuard]},
   {path:'getmarks', component:GetmarksComponent,canActivate:[AuthGuard]},
-  {path:'addteacher', component:AddteacherComponent,canActivate:[AuthGuard]},
+  {path:'addteacher', component:AddteacherComponent,canActivate:[AuthGuard,AdminGuard]},
   {path:'teacher', component:TeacherComponent,canActivate:[AuthGuard]},
 ];
 
@@ -98,7 +100,7 @@ export const firebaseConfig = {
     TeacherComponent,
     StudentnavComponent,
     AdminnavComponent,
-    TeachernavComponent,
+    TeachernavComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +112,8 @@ export const firebaseConfig = {
     AngularFireAuth,
     AngularFireDatabase,
     StudentsService,AuthService,
-    AuthGuard,TestService
+    AuthGuard,TestService,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

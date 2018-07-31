@@ -1,6 +1,6 @@
 <nav class="navbar navbar-toggleable-md navigation">
       
-      <a class="navbar-brand" href="#"><i class="fa fa-graduation-cap"></i>&nbsp;Student Test Management</a>
+      <a class="navbar-brand brand" href="#"><i class="fa fa-graduation-cap logo"></i>&nbsp;Student Test Management</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span ><i class="fa fa-toggle-down mt-auto"></i></span>
       </button>
@@ -20,7 +20,8 @@
               <img src="{{userPhotoUrl}}" height="30" width="30">&nbsp;{{loggedInUser}}</a>
             </li> 
             <li *ngIf="isLoggedIn" class="nav-item">
-              <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
+              <a class="nav-link" href="#" (click)="onLogoutClick()">
+                <i class="fa fa-arrow-circle-o-right"></i> &nbsp;Logout</a>
             </li>    
         </ul>    
       </div>

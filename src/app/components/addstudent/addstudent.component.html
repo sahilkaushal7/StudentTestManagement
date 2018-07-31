@@ -57,20 +57,20 @@
             class="form-control"
             [(ngModel)]="student.email"
             name="email"
+            email="true"
             #studentEmail="ngModel"
-            minlength="5"
             required
           >
           <div *ngIf="studentEmail.errors?.required && studentEmail.touched" class="alert alert-danger">
             Email required
           </div>
-          <div *ngIf="studentEmail.errors?.minlength && studentEmail.touched" class="alert alert-danger">
-              Email should be atleast 5 characters
+          <div *ngIf="studentEmail.errors?.email && studentEmail.touched" class="alert alert-danger">
+              Email should be in valid format
             </div>
         </div>
   
         <div class="form-group">
-          <label for="phone">Phone</label>
+          <label for="number">Phone</label>
           <input 
             type="text"
             class="form-control"
@@ -78,6 +78,7 @@
             name="phone"
             #studentPhone="ngModel"
             minlength="10"
+            maxlength="10"
             required
           >
           <div *ngIf="studentPhone.errors?.minlength && studentPhone.touched" class="alert alert-danger">
@@ -96,11 +97,11 @@
             name="role"
             #role="ngModel"
             required>
-            <option value="student">Student</option>
+            <option selected value="student">Student</option>
           </select>
         </div>
         
-        <input type="submit" class="btn btn-primary btn-block" value="Submit">
+        <input type="submit" class="btn btn-primary btn-block mx-auto" style="width:200px;" value="Submit">
       </form>
     </div>
   </div>

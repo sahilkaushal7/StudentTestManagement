@@ -1,19 +1,25 @@
 .navigation{
     box-shadow: 0px 0px 20px 2px;
-    background-color: #222223; 
+    background-color: #57BC90; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 900;
+    font-weight: 200;
+    font-size:14px;
+}
+.brand{
+    font-weight: 600;
+    color:#18203e;
 }
 a
 {
 cursor:pointer;
 color:white;
 }
-a:hover
-{
-    color:rgb(155, 150, 141);
-}
+
 button{
     color:white;
     
+}
+.logo
+{
+    font-size:18px;
 }
