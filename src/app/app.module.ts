@@ -41,7 +41,6 @@ import { StudentnavComponent } from './components/navbar/studentnav/studentnav.c
 import { AdminnavComponent } from './components/navbar/adminnav/adminnav.component';
 import { TeachernavComponent } from './components/navbar/teachernav/teachernav.component';
 import { AdminGuard } from './guards/admin.guard';
-import { TeacherGuard } from './guards/teacher.guard';
 
 
 const appRoutes: Routes = [
