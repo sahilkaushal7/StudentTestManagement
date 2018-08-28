@@ -27,7 +27,7 @@ export class StudentdetailsComponent implements OnInit {
     });
     
   }
-  onDeleteClick(id:string)
+  onDeleteClick()
   {
     if(confirm('Are you sure, you want to delete this student?'))
     { 
